@@ -1,6 +1,6 @@
 <h1 align="center">Randomizable</h1>
 
-<h5 align="center">Any type random value generator</h5>
+<h5 align="center">Any type random value generator to reduce boilerplates for unittest</h5>
 
 <div align="center">
   <a href="https://github.com/Carthage/Carthage">
@@ -36,7 +36,7 @@ github "tattn/Randomizable"
 
 # Usage
 
-## Generate random value of struct
+## Generate random value for `struct`
 
 ```swift
 import Randomizable
@@ -73,6 +73,22 @@ struct User: Decodable, Randomizable {
 
 let user = User.randomValue()
 # => User(name: "gaoaweja", profile: Profile(email: "iwelasm@test.com" birthday: 2018-11-02 16:25:17 +0000))
+```
+
+## Enum support
+
+```swift
+struct A: Decodable, Randomizable {
+    let animal: Animal
+    enum Animal: String, Decodable, CaseIterable, Randomizable {
+        case cat
+        case dog
+        case rabbit
+    }
+}
+
+A.randomValue()
+# => A(animal: Animal.cat)
 ```
 
 
