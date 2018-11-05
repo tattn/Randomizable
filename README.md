@@ -19,6 +19,7 @@
 ## Features
 
 - [x] Generate random value for any type
+- [x] Customize rules for random
 
 # Requirements
 
@@ -50,7 +51,8 @@ struct User: Decodable, Randomizable {
     }
 }
 
-let user = User.randomValue() # => User(id: ID(id: 1823), name: "raewfbaw")
+let user = User.randomValue()
+// => User(id: ID(id: 1823), name: "raewfbaw")
 ```
 
 ## Customize random value
@@ -72,7 +74,8 @@ struct User: Decodable, Randomizable {
 }
 
 let user = User.randomValue()
-# => User(name: "gaoaweja", profile: Profile(email: "iwelasm@test.com" birthday: 2018-11-02 16:25:17 +0000))
+// => User(name: "gaoaweja", profile: Profile(email: "iwelasm@test.com"
+//                           birthday: 2018-11-02 16:25:17 +0000))
 ```
 
 ## Enum support
@@ -88,7 +91,7 @@ struct A: Decodable, Randomizable {
 }
 
 A.randomValue()
-# => A(animal: Animal.cat)
+// => A(animal: Animal.cat)
 ```
 
 
