@@ -42,6 +42,7 @@ github "tattn/Randomizable"
 ```swift
 import Randomizable
 
+// conform Decodable to auto-implement Randomizable
 struct User: Decodable, Randomizable {
     let id: ID
     let name: String
