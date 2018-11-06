@@ -54,12 +54,12 @@ extension Date: Randomizable {
 
 extension Data: Randomizable {
     public static func randomValue() -> Data {
-        return Data(bytes: (10...100).map{ _ in UInt.defaultRamdom() }.map(UInt8.init))
+        return Data(bytes: (10...100).map{ _ in UInt.defaultRandom() }.map(UInt8.init))
     }
 }
 
 extension URL: Randomizable {
     public static func randomValue() -> URL {
-        return URL(string: "https://\(String.defaultRamdom()).com")!
+        return URL(string: "https://\(String.defaultRandom()).com")!
     }
 }

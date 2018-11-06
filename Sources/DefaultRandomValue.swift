@@ -9,89 +9,89 @@
 import Foundation
 
 protocol DefaultRamdom {
-    static func defaultRamdom() -> Self
+    static func defaultRandom() -> Self
 }
 
 extension Bool: DefaultRamdom {
-    static func defaultRamdom() -> Bool {
+    static func defaultRandom() -> Bool {
         return .random()
     }
 }
 
 extension Int: DefaultRamdom {
-    static func defaultRamdom() -> Int {
+    static func defaultRandom() -> Int {
         return .random(in: .min...(.max))
     }
 }
 
 extension Int8: DefaultRamdom {
-    static func defaultRamdom() -> Int8 {
+    static func defaultRandom() -> Int8 {
         return .random(in: .min...(.max))
     }
 }
 
 extension Int16: DefaultRamdom {
-    static func defaultRamdom() -> Int16 {
+    static func defaultRandom() -> Int16 {
         return .random(in: .min...(.max))
     }
 }
 
 extension Int32: DefaultRamdom {
-    static func defaultRamdom() -> Int32 {
+    static func defaultRandom() -> Int32 {
         return .random(in: .min...(.max))
     }
 }
 
 extension Int64: DefaultRamdom {
-    static func defaultRamdom() -> Int64 {
+    static func defaultRandom() -> Int64 {
         return .random(in: .min...(.max))
     }
 }
 
 extension UInt: DefaultRamdom {
-    static func defaultRamdom() -> UInt {
+    static func defaultRandom() -> UInt {
         return .random(in: .min...(.max))
     }
 }
 
 extension UInt8: DefaultRamdom {
-    static func defaultRamdom() -> UInt8 {
+    static func defaultRandom() -> UInt8 {
         return .random(in: .min...(.max))
     }
 }
 
 extension UInt16: DefaultRamdom {
-    static func defaultRamdom() -> UInt16 {
+    static func defaultRandom() -> UInt16 {
         return .random(in: .min...(.max))
     }
 }
 
 extension UInt32: DefaultRamdom {
-    static func defaultRamdom() -> UInt32 {
+    static func defaultRandom() -> UInt32 {
         return .random(in: .min...(.max))
     }
 }
 
 extension UInt64: DefaultRamdom {
-    static func defaultRamdom() -> UInt64 {
+    static func defaultRandom() -> UInt64 {
         return .random(in: .min...(.max))
     }
 }
 
 extension Float: DefaultRamdom {
-    static func defaultRamdom() -> Float {
+    static func defaultRandom() -> Float {
         return .random(in: -(.greatestFiniteMagnitude/2)...(.greatestFiniteMagnitude/2))
     }
 }
 
 extension Double: DefaultRamdom {
-    static func defaultRamdom() -> Double {
+    static func defaultRandom() -> Double {
         return .random(in: -(.greatestFiniteMagnitude/2)...(.greatestFiniteMagnitude/2))
     }
 }
 
 extension String: DefaultRamdom {
-    static func defaultRamdom() -> String {
+    static func defaultRandom() -> String {
         return String(bytes: Array(repeating: 0, count: .random(in: 4...8))
             .map { _ in UInt8.random(in: 97...122) }, encoding: .utf8) ?? "???"
     }
