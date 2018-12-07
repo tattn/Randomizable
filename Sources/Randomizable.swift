@@ -9,18 +9,18 @@
 import Foundation
 
 public protocol Randomizable {
-    static func randomValue() -> Self
+    static func randomValue(with option: RandomizableOption) -> Self
 }
 
 public extension Randomizable where Self: Decodable {
-    public static func randomValue() -> Self {
-        let randomDecoder = RandomDecoder()
+    public static func randomValue(with option: RandomizableOption = .init()) -> Self {
+        let randomDecoder = RandomDecoder(option: option)
         return try! randomDecoder.decode(Self.self)
     }
 }
 
 public extension Randomizable where Self: Decodable, Self: CaseIterable {
-    public static func randomValue() -> Self {
+    public static func randomValue(with option: RandomizableOption = .init()) -> Self {
         return allCases.randomElement()!
     }
 }
@@ -41,25 +41,25 @@ extension Double: Randomizable {}
 extension String: Randomizable {}
 
 extension Optional: Randomizable where Wrapped: Randomizable {
-    public static func randomValue() -> Optional<Wrapped> {
-        return Bool.random() ? nil : Wrapped.randomValue()
+    public static func randomValue(with option: RandomizableOption = .init()) -> Optional<Wrapped> {
+        return Bool.random() ? nil : Wrapped.randomValue(with: option)
     }
 }
 
 extension Date: Randomizable {
-    public static func randomValue() -> Date {
+    public static func randomValue(with option: RandomizableOption = .init()) -> Date {
         return Date()
     }
 }
 
 extension Data: Randomizable {
-    public static func randomValue() -> Data {
+    public static func randomValue(with option: RandomizableOption = .init()) -> Data {
         return Data(bytes: (10...100).map{ _ in UInt.defaultRandom() }.map(UInt8.init))
     }
 }
 
 extension URL: Randomizable {
-    public static func randomValue() -> URL {
+    public static func randomValue(with option: RandomizableOption = .init()) -> URL {
         return URL(string: "https://\(String.defaultRandom()).com")!
     }
 }
