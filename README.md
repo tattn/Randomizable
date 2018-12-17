@@ -35,6 +35,12 @@
 github "tattn/Randomizable"
 ```
 
+## Swift Package Manager
+
+```ruby
+.package(url: "https://github.com/tattn/Randomizable.git", from: “1.0.3")
+```
+
 # Usage
 
 ## Generate random value for `struct`
@@ -93,6 +99,22 @@ struct A: Decodable, Randomizable {
 
 A.randomValue()
 // => A(animal: Animal.cat)
+```
+
+## Configuration
+
+```swift
+struct A: Decodable, Randomizable {
+    let int: Int?
+    let string: String?
+}
+
+let configuration = RandomizableConfiguration()
+configuration.forceNil = true
+
+let a = A.randomValue(with: configuration)
+a.int // nil
+a.string // nil
 ```
 
 
