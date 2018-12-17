@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		240B742821BA648E00965E58 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240B742721BA648E00965E58 /* Option.swift */; };
+		240B742821BA648E00965E58 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240B742721BA648E00965E58 /* Configuration.swift */; };
 		244AE18C218C5408005CE31E /* Randomizable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244AE182218C5407005CE31E /* Randomizable.framework */; };
 		244AE191218C5408005CE31E /* RandomizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244AE190218C5408005CE31E /* RandomizableTests.swift */; };
 		244AE193218C5408005CE31E /* Randomizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 244AE185218C5407005CE31E /* Randomizable.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		240B742721BA648E00965E58 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		240B742721BA648E00965E58 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		244AE182218C5407005CE31E /* Randomizable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Randomizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244AE185218C5407005CE31E /* Randomizable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Randomizable.h; sourceTree = "<group>"; };
 		244AE186218C5407005CE31E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				244AE19E218C54B6005CE31E /* RandomDecoder.swift */,
 				244AE1A0218C54FA005CE31E /* DefaultRandomValue.swift */,
 				244AE1A2218C5674005CE31E /* AnyCodingKey.swift */,
-				240B742721BA648E00965E58 /* Option.swift */,
+				240B742721BA648E00965E58 /* Configuration.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			files = (
 				244AE19D218C5424005CE31E /* Randomizable.swift in Sources */,
 				244AE1A1218C54FA005CE31E /* DefaultRandomValue.swift in Sources */,
-				240B742821BA648E00965E58 /* Option.swift in Sources */,
+				240B742821BA648E00965E58 /* Configuration.swift in Sources */,
 				244AE1A3218C5674005CE31E /* AnyCodingKey.swift in Sources */,
 				244AE19F218C54B6005CE31E /* RandomDecoder.swift in Sources */,
 			);

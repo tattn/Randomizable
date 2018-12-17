@@ -95,7 +95,7 @@ class RandomizableTests: XCTestCase {
                     let ramdomString: String
                     let fixedString: String
 
-                    static func randomValue(with option: RandomizableOption) -> A.Child.ChildChild {
+                    static func randomValue(with configuration: RandomizableConfiguration) -> A.Child.ChildChild {
                         return A.Child.ChildChild(ramdomString: .randomValue(),
                                                   fixedString: "hello")
                     }
@@ -130,7 +130,7 @@ class RandomizableTests: XCTestCase {
                     fatalError()
                 }
 
-                static func randomValue(with option: RandomizableOption) -> A.Animal {
+                static func randomValue(with configuration: RandomizableConfiguration) -> A.Animal {
                     switch Int.random(in: 0...2) {
                     case 0: return .cat(name: .randomValue())
                     case 1: return .dog(name: .randomValue())
@@ -149,7 +149,9 @@ class RandomizableTests: XCTestCase {
             let double: Double?
             let bool: Bool?
         }
-        let a = A.randomValue(with: .init(forceNil: true))
+        let configuration = RandomizableConfiguration()
+        configuration.forceNil = true
+        let a = A.randomValue(with: configuration)
         XCTAssertNil(a.int)
         XCTAssertNil(a.string)
         XCTAssertNil(a.double)

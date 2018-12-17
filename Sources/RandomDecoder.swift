@@ -12,11 +12,11 @@ import Foundation
 open class RandomDecoder: Decoder {
     open var codingPath: [CodingKey]
     open var userInfo: [CodingUserInfoKey: Any] = [:]
-    let option: RandomizableOption
+    let configuration: RandomizableConfiguration
 
-    public init(option: RandomizableOption = .init(), codingPath: [CodingKey] = []) {
+    public init(configuration: RandomizableConfiguration = .init(), codingPath: [CodingKey] = []) {
         self.codingPath = codingPath
-        self.option = option
+        self.configuration = configuration
     }
 
     open func container<Key: CodingKey>(keyedBy type: Key.Type) throws -> KeyedDecodingContainer<Key> {
@@ -33,7 +33,7 @@ open class RandomDecoder: Decoder {
 
     func random<T: Decodable>() throws -> T {
         if let randomType = T.self as? Randomizable.Type {
-            return randomType.randomValue(with: option) as! T
+            return randomType.randomValue(with: configuration) as! T
         } else {
             return try T(from: self)
         }
@@ -60,7 +60,7 @@ extension RandomDecoder {
         func contains(_ key: Key) -> Bool { return true }
 
         func decodeNil(forKey key: Key) throws -> Bool {
-            return decoder.option.forceNil ? true : .random()
+            return decoder.configuration.forceNil ? true : .random()
         }
         func decode(_ type: Bool.Type, forKey key: Key) throws -> Bool { return .random() }
         func decode(_ type: Int.Type, forKey key: Key) throws -> Int { return .defaultRandom() }
@@ -135,7 +135,7 @@ extension RandomDecoder {
             return T.defaultRandom()
         }
 
-        func decodeNil() throws -> Bool { return decoder.option.forceNil ? true : .random() }
+        func decodeNil() throws -> Bool { return decoder.configuration.forceNil ? true : .random() }
         func decode(_ type: Bool.Type) throws -> Bool { return try ramdom(type) }
         func decode(_ type: Int.Type) throws -> Int { return try ramdom(type) }
         func decode(_ type: Int8.Type) throws -> Int8 { return try ramdom(type) }
@@ -195,7 +195,7 @@ extension RandomDecoder {
             self.decoder = decoder
         }
 
-        func decodeNil() -> Bool { return decoder.option.forceNil ? true : .random() }
+        func decodeNil() -> Bool { return decoder.configuration.forceNil ? true : .random() }
         func decode(_ type: Bool.Type) throws -> Bool { return .defaultRandom() }
         func decode(_ type: Int.Type) throws -> Int { return .defaultRandom() }
         func decode(_ type: Int8.Type) throws -> Int8 { return .defaultRandom() }
