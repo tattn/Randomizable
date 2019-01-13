@@ -126,7 +126,7 @@ extension RandomDecoder {
             count = Int.random(in: 2...4)
         }
 
-        func ramdom<T: DefaultRamdom>(_ type: T.Type) throws -> T {
+        func ramdom<T: DefaultRandom>(_ type: T.Type) throws -> T {
             decoder.codingPath.append(AnyCodingKey(index: currentIndex))
             defer {
                 decoder.codingPath.removeLast()
