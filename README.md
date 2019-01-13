@@ -3,6 +3,9 @@
 <h5 align="center">Any type random value generator to reduce boilerplates for unittest</h5>
 
 <div align="center">
+  <a href="https://app.bitrise.io/app/199f887ce5359b4e">
+    <img src="https://app.bitrise.io/app/199f887ce5359b4e/status.svg?token=bLqDl7vgLlFeGrk0towLWw" alt="Bitrise" />
+  </a>
   <a href="https://github.com/Carthage/Carthage">
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" />
   </a>
