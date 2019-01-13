@@ -8,89 +8,89 @@
 
 import Foundation
 
-protocol DefaultRamdom {
+protocol DefaultRandom {
     static func defaultRandom() -> Self
 }
 
-extension Bool: DefaultRamdom {
+extension Bool: DefaultRandom {
     static func defaultRandom() -> Bool {
         return .random()
     }
 }
 
-extension Int: DefaultRamdom {
+extension Int: DefaultRandom {
     static func defaultRandom() -> Int {
         return .random(in: .min...(.max))
     }
 }
 
-extension Int8: DefaultRamdom {
+extension Int8: DefaultRandom {
     static func defaultRandom() -> Int8 {
         return .random(in: .min...(.max))
     }
 }
 
-extension Int16: DefaultRamdom {
+extension Int16: DefaultRandom {
     static func defaultRandom() -> Int16 {
         return .random(in: .min...(.max))
     }
 }
 
-extension Int32: DefaultRamdom {
+extension Int32: DefaultRandom {
     static func defaultRandom() -> Int32 {
         return .random(in: .min...(.max))
     }
 }
 
-extension Int64: DefaultRamdom {
+extension Int64: DefaultRandom {
     static func defaultRandom() -> Int64 {
         return .random(in: .min...(.max))
     }
 }
 
-extension UInt: DefaultRamdom {
+extension UInt: DefaultRandom {
     static func defaultRandom() -> UInt {
         return .random(in: .min...(.max))
     }
 }
 
-extension UInt8: DefaultRamdom {
+extension UInt8: DefaultRandom {
     static func defaultRandom() -> UInt8 {
         return .random(in: .min...(.max))
     }
 }
 
-extension UInt16: DefaultRamdom {
+extension UInt16: DefaultRandom {
     static func defaultRandom() -> UInt16 {
         return .random(in: .min...(.max))
     }
 }
 
-extension UInt32: DefaultRamdom {
+extension UInt32: DefaultRandom {
     static func defaultRandom() -> UInt32 {
         return .random(in: .min...(.max))
     }
 }
 
-extension UInt64: DefaultRamdom {
+extension UInt64: DefaultRandom {
     static func defaultRandom() -> UInt64 {
         return .random(in: .min...(.max))
     }
 }
 
-extension Float: DefaultRamdom {
+extension Float: DefaultRandom {
     static func defaultRandom() -> Float {
         return .random(in: -(.greatestFiniteMagnitude/2)...(.greatestFiniteMagnitude/2))
     }
 }
 
-extension Double: DefaultRamdom {
+extension Double: DefaultRandom {
     static func defaultRandom() -> Double {
         return .random(in: -(.greatestFiniteMagnitude/2)...(.greatestFiniteMagnitude/2))
     }
 }
 
-extension String: DefaultRamdom {
+extension String: DefaultRandom {
     static func defaultRandom() -> String {
         return String(bytes: Array(repeating: 0, count: .random(in: 4...8))
             .map { _ in UInt8.random(in: 97...122) }, encoding: .utf8) ?? "???"
